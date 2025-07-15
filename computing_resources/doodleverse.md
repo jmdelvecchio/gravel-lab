@@ -26,7 +26,7 @@ As stated in the Doodleverse docs, the software is intended to run on <b>Windows
 
 `ssh -NfL [port]:[server]:[port] [your id]@[linux machine address]`
 
-For example, I would use `ssh -NfL 8050:127.0.0.1:8050 jdelvecchio01@astral.sciclone.wm.edu`
+For example, I would use `ssh -NfL 8050:astral.sciclone.wm.edu:8050 jdelvecchio01@astral.sciclone.wm.edu`
 
 5. You will be prompted for your password; enter it. If nothing happens, it's working!
 6. Copy and paste or type the http address into your web browser of choice. It should pop us as Doodler!!

@@ -19,7 +19,7 @@ As stated in the Doodleverse docs, the software is intended to run on <b>Windows
 
 ## Doodler on sciclone
 
-1. Log into your cluster node of choice as you usually do, install Dash Doodler if you haven't already, and activate your `dashdoodler` environment. 
+1. Log into your cluster node of choice as you usually do, [install Dash Doodler](https://github.com/Doodleverse/dash_doodler) if you haven't already, and activate your `dashdoodler` environment. 
 2. Run `python doodler.py` after navigating to the directory with `cd dash_doodler`
 3. Make an ssh tunnel to copy and paste the address that Doodler spits out. Note the address: it should be http://127.0.0.1:8050/  The server is 127.0.0.1 and the port is 8050. 
 4. Open another Terminal. Do `ssh` like you normally would but add flags `-NfL` (note capitals). The general syntax for ssh tunneling is:
@@ -29,7 +29,10 @@ As stated in the Doodleverse docs, the software is intended to run on <b>Windows
 For example, I would use `ssh -NfL 8050:astral.sciclone.wm.edu:8050 jdelvecchio01@astral.sciclone.wm.edu`
 
 5. You will be prompted for your password; enter it. If nothing happens, it's working!
-6. Copy and paste or type the http address into your web browser of choice. It should pop us as Doodler!!
+
+6. Navigate to http://127.0.0.1:8050/ into your web browser of choice. It should pop us as Doodler!!
+
+7. Follow the instructions as written in the program and in the repo. A little bug I've noticed is that you may have to select the file name a few times before the file name "sticks" under "Select Image." Otherwise you will get a blank screen instead of a new image. 
 
 # Training a model
 

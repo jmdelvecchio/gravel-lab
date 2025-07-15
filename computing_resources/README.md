@@ -8,6 +8,11 @@ If doing Earth observation:
 - [ ]  Register for Google Earth Engine - [register without a cloud project](https://code.earthengine.google.com/register)
 - [ ]  [Register for a Planet Labs education account](https://www.planet.com/markets/education-and-research/#apply-now) (I should be able to hook you up with my grant eventually but start here)
 
+# Using the Big Rig
+
+## Logging in remotely 
+
+## Installing and using WSL 
 
 # HPC resources
 ## Use VS Code to access HPC
@@ -65,6 +70,38 @@ conda create -n test python=3.12
 ```
 
 1. Activate that test environment with `conda activate test`. `(test)` should now appear in front of the name of the computer you’re on.
+
+## Access GPU nodes on the cluster
+
+### GRAVEL lab instructions
+
+1. Pull up an astral terminal either in Terminal, Command Prompt, or VS Code
+
+2. 2. Submit a request for an interactive GPU node for two hours with one GPU:
+    
+    `salloc -n 4 -t 2:00:00 --gpus=1`
+
+Note that you can request a time longer than two hours. Also note that if the queue is quite long you may consider [switching to performing your task on the Big Rig](#-Using-the-Big-Rig). 
+
+3. Be sure to activate your environment - any `conda` commands you ran before are not carried over to this new instance
+
+### General instructions from IT
+
+The [**SLURM**](https://www.wm.edu/offices/it/services/researchcomputing/using/jobsslurm/index.php) batch system is used on astral/as01 to run jobs.  The maximum walltime for all jobs on this cluster is 72hrs.  The front-end, astral, has 32 CPU cores available which will be the default node if you require only CPUs.   The GPU node, as01, may be specidied via your command-line options:
+
+To run an interactive job on CPUs only:
+
+`salloc -n 4 -t 1:00:00     # will get you 4 CPU cores`
+
+To request one or more GPUs:
+
+`salloc -n 4 -t 1:00:00 --gpus=2     # will get you 4 CPU cores and 2 GPUs`
+
+The --gpus=N  can be added to your srun command (to run a job directly from the command line) or in your batch script, i.e.:
+
+`#SBATCH --gpus=2`
+
+Currently, there are no reserved slots for debugging.  Please send email to [hpc-help] if you need help obtaining resources on this subcluster.
 
 # Some extra links - Local install
 
